@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CustomerItemDetails.Container"
+    tools:context=".detail.CustomerDetailFragment">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/linearProgressDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/buttonDetails"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearProgressDetails"
+        android:background="@android:color/transparent"
+        android:src="@drawable/back_button_details" />
+
+    <ImageView
+        android:id="@+id/mapViewImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/map_placeholder"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonDetails"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    
+    <TextView
+        android:id="@+id/imageViewPlaceHolderDetails"
+        style="@style/CustomerItemDetails.PhotoPlaceHolder"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/circle_image_view"
+        app:layout_constraintStart_toStartOf="@id/mapViewImage"
+        app:layout_constraintTop_toBottomOf="@id/mapViewImage"
+        tools:text="S N" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewDetails"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="@id/mapViewImage"
+        app:layout_constraintTop_toBottomOf="@id/mapViewImage"
+        app:shapeAppearanceOverlay="@style/CustomerItemDetails.Photo"
+        tools:src="@tools:sample/avatars[1]" />
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Name"
+        style="@style/CustomerItemDetails.Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageViewDetails"
+        app:layout_constraintTop_toBottomOf="@id/imageViewDetails" />
+
+    <TextView
+        android:id="@+id/tagsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Tags"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userNameTextView" />
+
+    <TextView
+        android:id="@+id/genderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Gender"
+        style="@style/CustomerItemDetails.Gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tagsTextView" />
+
+    <View
+        android:id="@+id/dividerPhone"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        style="@style/CustomerItemDetails.DividerPhone"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@id/genderTextView"
+        app:layout_constraintBottom_toBottomOf="@id/genderTextView"
+        app:layout_constraintStart_toEndOf="@id/genderTextView"
+        />
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Phone"
+        style="@style/CustomerItemDetails.Phone"
+        app:layout_constraintTop_toTopOf="@id/dividerPhone"
+        app:layout_constraintStart_toEndOf="@id/dividerPhone" />
+
+
+
+    <TextView
+        android:id="@+id/addressLabelTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        style="@style/CustomerItemDetails.AddressLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneTextView" />
+
+    <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Address Value"
+        style="@style/CustomerItemDetails.AddressValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addressLabelTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

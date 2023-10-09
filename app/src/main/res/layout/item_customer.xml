@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CustomerItem.Container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/CustomerItem.Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        tools:text="Savanah Nyguen" />
+
+    <TextView
+        android:id="@+id/genderTextView"
+        style="@style/CustomerItem.Gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/nameTextView"
+        app:layout_constraintTop_toTopOf="@id/nameTextView"
+        tools:text="Female" />
+
+    <TextView
+        android:id="@+id/phoneNumberTextView"
+        style="@style/CustomerItem.Phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        tools:text="+49 1234 654 897" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerStickers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/phoneNumberTextView"
+        app:layout_constraintTop_toTopOf="@id/phoneNumberTextView" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:visibility="invisible"
+        tools:src ="@tools:sample/avatars[1]"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CustomerItem.Photo" />
+
+    <TextView
+        android:id="@+id/imageViewPlaceHolder"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/CustomerItem.PhotoPlaceHolder"
+        android:background="@drawable/circle_image_view"
+        android:visibility="gone"
+        tools:text="S N"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
